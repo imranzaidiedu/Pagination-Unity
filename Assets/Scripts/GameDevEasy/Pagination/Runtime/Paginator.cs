@@ -15,7 +15,7 @@ namespace GameDevEasy.Pagination
 		private LinkedList<int> _pageCache;
 		private bool _initialized;
 		
-		private bool IsCaching => _maxPageCacheSize > 1;
+		private bool IsCaching => _maxPageCacheSize > 0;
 
 		protected Paginator(IPageProvider<T> pageProvider, int preloadPageCount = 0, int maxPageCacheSize = 0)
 		{
@@ -128,7 +128,11 @@ namespace GameDevEasy.Pagination
 		
 		private void GetAdjacentPage(int currentPageNumber, int nextPageNumber, Action<IPage<T>> callback)
 		{
-			if (!_initialized) { return; }
+			if (!_initialized)
+			{
+				callback?.Invoke(null);
+				return;
+			}
 
 			if (nextPageNumber < PageNumberStartsFrom)
 			{
