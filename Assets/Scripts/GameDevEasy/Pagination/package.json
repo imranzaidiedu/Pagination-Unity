@@ -1,7 +1,7 @@
 {
-  "name": "com.gamedeveasy.paginationunity",
+  "name": "com.gamedeveasy.pagination",
   "version": "1.0.0",
-  "displayName": "Pagination-Unity",
+  "displayName": "Pagination",
   "description": "This projects provides a pagination system to be used in unity projects",
   "unity": "2019.1",
   "documentationUrl": "https://example.com/",
@@ -10,10 +10,10 @@
  "keywords": [
     "Pagination",
     "Pages",
-    "Unity",
+    "Unity"
   ],
   "author": {
     "name": "Imran Bin Azhar",
-    "email": "imran.zaidiedu@gmail.com",
+    "email": "imran.zaidiedu@gmail.com"
   }
 }
