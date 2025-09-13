@@ -15,5 +15,12 @@
   "author": {
     "name": "Imran Bin Azhar",
     "email": "imran.zaidiedu@gmail.com"
-  }
+  },
+  "samples": [
+    {
+      "displayName": "Pagination Example",
+      "description": "Example of how to use the pagination system",
+      "path": "Samples~/Example"
+    }
+  ]
 }
