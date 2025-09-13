@@ -1,4 +1,4 @@
-namespace GameDevEasy.PaginationUnity
+namespace GameDevEasy.Pagination
 {
     public interface IPage<T>
     {

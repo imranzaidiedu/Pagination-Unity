@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GameDevEasy.PaginationUnity
+namespace GameDevEasy.Pagination
 {
 	public class Paginator<T> : IPaginator<T>
 	{

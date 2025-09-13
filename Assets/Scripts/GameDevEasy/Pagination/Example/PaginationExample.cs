@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-namespace GameDevEasy.PaginationUnity.Example
+namespace GameDevEasy.Pagination.Example
 {
     public class PaginationExample : MonoBehaviour
     {

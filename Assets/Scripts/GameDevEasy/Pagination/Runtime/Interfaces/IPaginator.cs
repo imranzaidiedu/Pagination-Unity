@@ -1,6 +1,6 @@
 using System;
 
-namespace GameDevEasy.PaginationUnity
+namespace GameDevEasy.Pagination
 {
     public interface IPaginator<T>
     {
