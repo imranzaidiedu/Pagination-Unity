@@ -50,8 +50,11 @@ namespace GameDevEasy.Pagination
 				
 				if (_pagesByNumber.TryAdd(_currentPageNumber, page))
 				{
-					//First page is already cached, start with the 2nd page.
-					PreloadPages(_currentPageNumber + 1);
+					if (_preloadPageCount > 1)
+					{
+						//First page is already cached, start with the 2nd page.
+						PreloadPages(_currentPageNumber + 1);
+					}
 				}
 				else
 				{

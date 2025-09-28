@@ -8,13 +8,13 @@ namespace GameDevEasy.Pagination.Example
     public class PaginationExample : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI _displayText;
-        private ItemsPaginator _itemsPaginator;
-        private ItemsPageProvider _itemsPageProvider;
+        private IPaginator<ItemData> _itemsPaginator;
+        private IPageProvider<ItemData> _itemsPageProvider;
         
         private void Awake()
         {
             _itemsPageProvider = new ItemsPageProvider(103, 10);
-            _itemsPaginator = new ItemsPaginator(_itemsPageProvider, 10);
+            _itemsPaginator = new ItemsPaginator(_itemsPageProvider);
         }
 
         private void GetCurrentPage(Action<string> callback)
@@ -151,7 +151,7 @@ namespace GameDevEasy.Pagination.Example
             
             if(allItems.Count > 0)
             {
-                _allPages.Add(new ItemsPage(Mathf.CeilToInt((float)totalItems / _itemsPerPage), _itemsPerPage, allItems.ToArray()));
+                _allPages.Add(new ItemsPage(Mathf.FloorToInt((float)totalItems / _itemsPerPage), _itemsPerPage, allItems.ToArray()));
             }
         }
 
@@ -173,7 +173,7 @@ namespace GameDevEasy.Pagination.Example
     }
     public class ItemsPaginator : Paginator<ItemData>
     {
-        public ItemsPaginator(IPageProvider<ItemData> pageProvider, int itemsPerPage) : base(pageProvider, itemsPerPage)
+        public ItemsPaginator(IPageProvider<ItemData> pageProvider, int preloadPages = 0) : base(pageProvider, preloadPages)
         {
         }
     }
